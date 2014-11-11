@@ -20,6 +20,7 @@ A basic example for the usage of this class:
                    echo $key . ' => ' . $value;
                 }
             },
-            '[list-id]');
+            '[list-id]'
+            );
 
 
