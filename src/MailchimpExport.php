@@ -184,14 +184,17 @@ class MailchimpExport
      */
     protected function readFromStream(StreamInterface $stream, MailchimpExport_DataCallbackInterface $dataCallable)
     {
-        $headings = array();
+        $headings = null;
         $first = true;
         $hasHeadingRow = $dataCallable->hasHeadingRow();
 
         // Read until the stream is closed
         while (!$stream->feof()) {
             // Read a line from the stream
-            $currentRow = $stream->readLine();
+            $currentRow = trim($stream->readLine());
+            if (strlen($currentRow) == 0) {
+                continue;
+            }
             $currentDataSet = json_decode($currentRow, true);
 
             if (!$currentDataSet) {
