@@ -27,7 +27,7 @@ class MailchimpExport_Lists implements MailchimpExport_DataCallbackInterface {
      * @param null $hashed if, instead of full list data, you'd prefer a hashed list of email addresses, set this to the hashing algorithm you expect. Currently only "sha256" is supported.
      * @throws MailchimpExport_NoCallableError
      */
-    public function export(callable $callable, $id, $status = self::STATUS_SUBSCRIBED, array $segment = array(), $since = null, $hashed = null) {
+    public function export($callable, $id, $status = self::STATUS_SUBSCRIBED, array $segment = array(), $since = null, $hashed = null) {
 
         $_params = array("id" => $id, "status" => $status, "segment" => $segment, "since" => $since, 'hashed' => $hashed);
         $this->callable = $callable;
