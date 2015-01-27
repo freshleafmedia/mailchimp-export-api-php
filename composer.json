@@ -1,18 +1,11 @@
 {
-    "name": "sschulze/mailchimp-export",
+    "name": "freshleafmedia/mailchimp-export",
     "type": "library",
     "version": "1.0",
-    "description": "API client library for the MailChimp Export service",
+    "description": "API client library for the MailChimp Export service (forked from nahpeps/mailchimp-export-api-php)",
     "keywords": ["export", "api"],
-    "homepage": "https://github.com/nahpeps/mailchimp-export-api-php",
+    "homepage": "https://github.com/freshleafmedia/mailchimp-export-api-php",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Stephan Schulze",
-            "email": "info@stephan-schulze.de",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "php": ">=5.3.0",
         "guzzle/stream": "3.7.*@dev",
