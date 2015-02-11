@@ -20,7 +20,7 @@ class MailchimpExport_CampaignSubscriberActivity implements MailchimpExport_Data
      * @param null $since only return orders with order dates since a GMT timestamp – in YYYY-MM-DD HH:mm:ss format
      * @return string
      */
-    public function export(callable $callable, $id, $includeEmpty = false, $since = null) {
+    public function export($callable, $id, $includeEmpty = false, $since = null) {
         $_params = array("id" => $id, "include_empty" => $includeEmpty, "since" => $since);
         $this->callable = $callable;
         $this->master->call('campaignSubscriberActivity/', $_params, $this);
