@@ -2,7 +2,6 @@ Overview
 =============================================
 A PHP 5.3+ API client for [v1 of the MailChimp Export-API](http://apidocs.mailchimp.com/export/1.0/).
 Please note that we generate this client/wrapper, so while we're happy to look at any pull requests, ultimately we can't technically accept them.
-We will, however comment on any additions or changes made due to them before closing them.
 
 
 ###Usage
