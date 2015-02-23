@@ -29,6 +29,10 @@ class MailchimpExport_Lists implements MailchimpExport_DataCallbackInterface {
      */
     public function export($callable, $id, $status = self::STATUS_SUBSCRIBED, array $segment = array(), $since = null, $hashed = null) {
 
+        if (!is_callable($callable)) {
+            throw new MailchimpExport_NoCallableError('$callable must be a callable');
+        }
+
         $_params = array("id" => $id, "status" => $status, "segment" => $segment, "since" => $since, 'hashed' => $hashed);
         $this->callable = $callable;
         $this->master->call('list/', $_params, $this);

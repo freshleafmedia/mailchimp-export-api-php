@@ -21,6 +21,10 @@ class MailchimpExport_CampaignSubscriberActivity implements MailchimpExport_Data
      * @return string
      */
     public function export($callable, $id, $includeEmpty = false, $since = null) {
+        if (!is_callable($callable)) {
+            throw new MailchimpExport_NoCallableError('$callable must be a callable');
+        }
+
         $_params = array("id" => $id, "include_empty" => $includeEmpty, "since" => $since);
         $this->callable = $callable;
         $this->master->call('campaignSubscriberActivity/', $_params, $this);

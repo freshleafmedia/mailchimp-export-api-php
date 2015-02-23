@@ -17,7 +17,11 @@ class MailchimpExport_Ecomm implements MailchimpExport_DataCallbackInterface {
      * @param null $since only return orders with order dates since a GMT timestamp – in YYYY-MM-DD HH:mm:ss format
      * @return string
      */
-    public function export(callable $callable, $since = null) {
+    public function export($callable, $since = null) {
+        if (!is_callable($callable)) {
+            throw new MailchimpExport_NoCallableError('$callable must be a callable');
+        }
+
         $_params = array("since" => $since);
         $this->callable = $callable;
         $this->master->call('ecommOrders/', $_params, $this);

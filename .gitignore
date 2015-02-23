@@ -1,0 +1,9 @@
+/.idea/
+/web/bundles/
+/vendor/
+composer\.lock
+app/bootstrap\.php\.cache
+/nfs/*
+/web/js
+/data
+*.bin
