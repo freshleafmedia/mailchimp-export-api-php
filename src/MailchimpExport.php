@@ -1,8 +1,6 @@
 <?php
 
-use Guzzle\Http\Client;
-use Guzzle\Stream\PhpStreamRequestFactory;
-use Guzzle\Stream\StreamInterface;
+use GuzzleHttp\Stream\Stream;
 
 require_once 'MailchimpExportDataCallbackInterface.php';
 require_once 'MailchimpExport/Ecomm.php';
