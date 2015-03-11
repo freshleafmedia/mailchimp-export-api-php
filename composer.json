@@ -7,7 +7,6 @@
     "license": "MIT",
     "require": {
         "php": ">=5.3.0",
-        "guzzle/stream": "3.9.2",
         "guzzle/guzzle": "3.9.2"
     },
     "autoload": {
